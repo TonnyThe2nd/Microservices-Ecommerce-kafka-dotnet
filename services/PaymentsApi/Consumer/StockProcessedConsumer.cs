@@ -26,38 +26,50 @@ public class StockProcessedConsumer : BackgroundService
 
         while (!stoppingToken.IsCancellationRequested)
         {
-            var result = consumer.Consume(stoppingToken);
-            Console.WriteLine("📥 [PaymentsApi] Recebeu stock-processed");
-
-            var stockEvent = JsonSerializer.Deserialize<StockProcessedEvent>(result.Message.Value);
-            Console.WriteLine($"📦 OrderId: {stockEvent.OrderId} | Success: {stockEvent.Status} | Amount: {stockEvent.Amount} ");
-
-            if (stockEvent == null || stockEvent.Status == StockStatus.Failed){
-                Console.WriteLine("⚠️ [PaymentsApi] Estoque falhou, pagamento cancelado");
-                continue;
-            }
-            Console.WriteLine("💳 [PaymentsApi] Processando pagamento...");
-
-            using var scope = _scopeFactory.CreateScope();
-
-            var paymentService = scope.ServiceProvider.GetRequiredService<PaymentService>();
-            var producer = scope.ServiceProvider.GetRequiredService<PaymentEventProducer>();
-
-            var paymentStatus = paymentService.ProcessPayment(stockEvent.OrderId, stockEvent.Amount);
-            Console.WriteLine(paymentStatus == PaymentStatus.Success
-                ? "✅ [PaymentsApi] Pagamento aprovado"
-                : "❌ [PaymentsApi] Pagamento recusado");
-
-            var evt = new PaymentProcessedEvent
+            try
             {
-                OrderId = stockEvent.OrderId,
-                Amount = stockEvent.Amount,
-                Status = paymentStatus,
-                ProcessedAt = DateTime.UtcNow
-            };
+                var result = consumer.Consume(stoppingToken);
+                Console.WriteLine("📥 [PaymentsApi] Recebeu stock-processed");
 
-            await producer.PublishPaymentProcessedAsync(evt);
-            Console.WriteLine("📤 [PaymentsApi] Publicando payment-processed");
+                var stockEvent = JsonSerializer.Deserialize<StockProcessedEvent>(result.Message.Value);
+                Console.WriteLine($"📦 OrderId: {stockEvent.OrderId} | Success: {stockEvent.Status} | Amount: {stockEvent.Amount} ");
+
+                if (stockEvent == null || stockEvent.Status == StockStatus.Failed)
+                {
+                    Console.WriteLine("⚠️ [PaymentsApi] Estoque falhou, pagamento cancelado");
+                    continue;
+                }
+                Console.WriteLine("💳 [PaymentsApi] Processando pagamento...");
+
+                using var scope = _scopeFactory.CreateScope();
+
+                var paymentService = scope.ServiceProvider.GetRequiredService<PaymentService>();
+                var producer = scope.ServiceProvider.GetRequiredService<PaymentEventProducer>();
+
+                var paymentStatus = paymentService.ProcessPayment(stockEvent.OrderId, stockEvent.Amount);
+                Console.WriteLine(paymentStatus == PaymentStatus.Success
+                    ? "✅ [PaymentsApi] Pagamento aprovado"
+                    : "❌ [PaymentsApi] Pagamento recusado");
+
+                var evt = new PaymentProcessedEvent
+                {
+                    OrderId = stockEvent.OrderId,
+                    Amount = stockEvent.Amount,
+                    Status = paymentStatus,
+                    ProcessedAt = DateTime.UtcNow
+                };
+
+                await producer.PublishPaymentProcessedAsync(evt);
+                Console.WriteLine("📤 [PaymentsApi] Publicando payment-processed");
+            } catch (OperationCanceledException)
+            {
+                Console.WriteLine("⚠️ [PaymentsApi] Cancelando consumidor...");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"❌ [PaymentsApi] Erro ao processar stock-processed: {ex.Message}");
+            }
+            
         }
 
         consumer.Close();
