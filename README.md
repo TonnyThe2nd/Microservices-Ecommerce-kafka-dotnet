@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Event Driven E-commerce Microservices</title>
-</head>
+
 <body>
 
 <h1>🚀 Event-Driven E-commerce Microservices</h1>
