@@ -58,7 +58,7 @@ Order API  →  Kafka  →  Stock API  →  Kafka  →  Order API  → Payment F
 <h2>⚙️ Tecnologias Utilizadas</h2>
 
 <ul>
-    <li>.NET 8 / ASP.NET Core</li>
+    <li>.NET 10 / ASP.NET Core</li>
     <li>Entity Framework Core</li>
     <li>Apache Kafka</li>
     <li>SQL Server</li>
@@ -129,12 +129,6 @@ consistência eventual e comunicação assíncrona entre serviços.
 </p>
 
 <hr>
-
-<h2>🔥 Autor</h2>
-
-<p>
-Projeto desenvolvido para estudo de arquitetura distribuída com .NET e Kafka.
-</p>
 
 </body>
 </html>
