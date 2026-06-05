@@ -22,8 +22,6 @@ public class StockDbContext : DbContext
             {
                 _.ToTable("Orders","OEBM\\antonioso");
                 _.HasKey(o => o.Id);
-                _.Property(o => o.CustomerName).IsRequired().HasMaxLength(100);
-                _.Property(o => o.CustomerEmail).IsRequired().HasMaxLength(100);
             });
     }
 }

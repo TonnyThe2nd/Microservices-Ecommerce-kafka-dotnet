@@ -4,6 +4,9 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Log para debug
+Console.WriteLine("=== INICIANDO CONFIGURAÇÃO DE SERVIÇOS ===");
+
 builder.Services.AddOpenApi();
 
 builder.Services.AddScoped<IUserRepository, UserRepositry>();
@@ -20,6 +23,7 @@ builder.Services.AddDbContext<UserDbContext>(options =>
 var key = builder.Configuration["Jwt:Key"];
 var issuer = builder.Configuration["Jwt:Issuer"];
 var audience = builder.Configuration["Jwt:Audience"];
+
 
 builder.Services.AddAuthentication(options =>
 {
@@ -45,8 +49,7 @@ builder.Services.AddAuthentication(options =>
 
 builder.Services.AddAuthorization();
 
-
-var app = builder.Build();
+var app = builder.Build(); 
 
 app.UseAuthentication();
 app.UseAuthorization();
@@ -56,4 +59,5 @@ if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
 }
+
 app.Run();

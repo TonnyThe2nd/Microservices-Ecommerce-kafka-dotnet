@@ -19,12 +19,11 @@ public class OrderService
             price *= 0.90m; // 10% desconto
         return price;
     }
-    public async Task<OrderResponse> CreateOrderAsync(CreateOrderRequest request)
+    public async Task<OrderResponse> CreateOrderAsync(CreateOrderRequest request, Guid customerId)
 {
     var order = new Orders
     {
-        CustomerName = request.CustomerName,
-        CustomerEmail = request.CustomerEmail,
+        CustomerId = customerId,
         Status = OrderStatus.VerifyingStock,
         CreatedAt = DateTime.UtcNow
     };
@@ -44,8 +43,7 @@ public class OrderService
 
     var orderCreatedEvent = new OrderCreatedEvent(
         order.Id,
-        order.CustomerName,
-        order.CustomerEmail,
+        order.CustomerId,
         order.Items.Select(i =>
             new OrderCreatedItem(
                 i.ProductId,
@@ -63,8 +61,7 @@ public class OrderService
 
     return new OrderResponse(
         order.Id,
-        order.CustomerName,
-        order.CustomerEmail,
+        order.CustomerId,
         order.Status,
         order.CreatedAt,
         order.UpdatedAt,

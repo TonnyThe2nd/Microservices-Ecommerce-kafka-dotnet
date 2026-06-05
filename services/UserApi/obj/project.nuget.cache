@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MyMKGINwAXY=",
+  "dgSpecHash": "E01383CrEvI=",
   "success": true,
-  "projectFilePath": "C:\\Users\\antonioso\\Documents\\Sistema\\services\\UserApi\\UserApi.csproj",
+  "projectFilePath": "c:\\Users\\antonioso\\Documents\\Sistema\\services\\UserApi\\UserApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\antonioso\\.nuget\\packages\\azure.core\\1.47.1\\azure.core.1.47.1.nupkg.sha512",
     "C:\\Users\\antonioso\\.nuget\\packages\\azure.identity\\1.14.2\\azure.identity.1.14.2.nupkg.sha512",
@@ -61,10 +61,10 @@
     {
       "code": "NU1904",
       "level": "Warning",
-      "message": "O pacote 'log4net' 2.0.5 tem uma crítico vulnerabilidade de gravidade conhecida, https://github.com/advisories/GHSA-2cwj-8chv-9pp9",
-      "projectPath": "C:\\Users\\antonioso\\Documents\\Sistema\\services\\UserApi\\UserApi.csproj",
+      "message": "Package 'log4net' 2.0.5 has a known critical severity vulnerability, https://github.com/advisories/GHSA-2cwj-8chv-9pp9",
+      "projectPath": "c:\\Users\\antonioso\\Documents\\Sistema\\services\\UserApi\\UserApi.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\antonioso\\Documents\\Sistema\\services\\UserApi\\UserApi.csproj",
+      "filePath": "c:\\Users\\antonioso\\Documents\\Sistema\\services\\UserApi\\UserApi.csproj",
       "libraryId": "log4net",
       "targetGraphs": [
         "net10.0"
@@ -73,10 +73,10 @@
     {
       "code": "NU1902",
       "level": "Warning",
-      "message": "O pacote 'log4net' 2.0.5 tem uma moderado vulnerabilidade de gravidade conhecida, https://github.com/advisories/GHSA-4f7c-pmjv-c25w",
-      "projectPath": "C:\\Users\\antonioso\\Documents\\Sistema\\services\\UserApi\\UserApi.csproj",
+      "message": "Package 'log4net' 2.0.5 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-4f7c-pmjv-c25w",
+      "projectPath": "c:\\Users\\antonioso\\Documents\\Sistema\\services\\UserApi\\UserApi.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\antonioso\\Documents\\Sistema\\services\\UserApi\\UserApi.csproj",
+      "filePath": "c:\\Users\\antonioso\\Documents\\Sistema\\services\\UserApi\\UserApi.csproj",
       "libraryId": "log4net",
       "targetGraphs": [
         "net10.0"
@@ -85,10 +85,10 @@
     {
       "code": "NU1701",
       "level": "Warning",
-      "message": "O pacote 'log4net 2.0.5' foi restaurado usando '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' em vez da estrutura de destino do projeto 'net10.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
-      "projectPath": "C:\\Users\\antonioso\\Documents\\Sistema\\services\\UserApi\\UserApi.csproj",
+      "message": "Package 'log4net 2.0.5' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net10.0'. This package may not be fully compatible with your project.",
+      "projectPath": "c:\\Users\\antonioso\\Documents\\Sistema\\services\\UserApi\\UserApi.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\antonioso\\Documents\\Sistema\\services\\UserApi\\UserApi.csproj",
+      "filePath": "c:\\Users\\antonioso\\Documents\\Sistema\\services\\UserApi\\UserApi.csproj",
       "libraryId": "log4net",
       "targetGraphs": [
         "net10.0"
@@ -97,10 +97,10 @@
     {
       "code": "NU1701",
       "level": "Warning",
-      "message": "O pacote 'Migrations 1.0.1' foi restaurado usando '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' em vez da estrutura de destino do projeto 'net10.0'. Esse pacote pode não ser totalmente compatível com o seu projeto.",
-      "projectPath": "C:\\Users\\antonioso\\Documents\\Sistema\\services\\UserApi\\UserApi.csproj",
+      "message": "Package 'Migrations 1.0.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net10.0'. This package may not be fully compatible with your project.",
+      "projectPath": "c:\\Users\\antonioso\\Documents\\Sistema\\services\\UserApi\\UserApi.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\antonioso\\Documents\\Sistema\\services\\UserApi\\UserApi.csproj",
+      "filePath": "c:\\Users\\antonioso\\Documents\\Sistema\\services\\UserApi\\UserApi.csproj",
       "libraryId": "Migrations",
       "targetGraphs": [
         "net10.0"

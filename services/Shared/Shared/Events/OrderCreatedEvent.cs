@@ -1,7 +1,6 @@
 public record OrderCreatedEvent(
     int OrderId,
-    string CustomerName,
-    string CustomerEmail,
+    Guid CustomerId,
     List<OrderCreatedItem> Items,
     decimal Total,
     DateTime CreatedAt
