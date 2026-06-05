@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\antonioso\\Documents\\Sistema\\services\\UserApi\\UserApi.csproj": {}
+    "C:\\Users\\antonioso\\Documents\\Sistema\\services\\UserApi\\UserApi.csproj": {}
   },
   "projects": {
-    "c:\\Users\\antonioso\\Documents\\Sistema\\services\\UserApi\\UserApi.csproj": {
+    "C:\\Users\\antonioso\\Documents\\Sistema\\services\\UserApi\\UserApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\antonioso\\Documents\\Sistema\\services\\UserApi\\UserApi.csproj",
+        "projectUniqueName": "C:\\Users\\antonioso\\Documents\\Sistema\\services\\UserApi\\UserApi.csproj",
         "projectName": "UserApi",
-        "projectPath": "c:\\Users\\antonioso\\Documents\\Sistema\\services\\UserApi\\UserApi.csproj",
+        "projectPath": "C:\\Users\\antonioso\\Documents\\Sistema\\services\\UserApi\\UserApi.csproj",
         "packagesPath": "C:\\Users\\antonioso\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\antonioso\\Documents\\Sistema\\services\\UserApi\\obj\\",
+        "outputPath": "C:\\Users\\antonioso\\Documents\\Sistema\\services\\UserApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
