@@ -10,7 +10,7 @@
           id="email"
           type="email"
           placeholder="Digite seu e-mail"
-          formControlName="username"
+          formControlName="email"
         />
       </div>
 
@@ -24,13 +24,13 @@
         />
       </div>
 
-      <button type="submit">
+      <button  mat-button type="submit" (click)="login()">
         Entrar
       </button>
 
       <div class="footer">
         <span>Não possui uma conta?</span>
-        <a routerLink="/cadastro">Cadastre-se</a>
+        <a routerLink="/cadastro" >Cadastre-se</a>
       </div>
     </form>
   </div>

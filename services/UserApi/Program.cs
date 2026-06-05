@@ -4,7 +4,6 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Log para debug
 Console.WriteLine("=== INICIANDO CONFIGURAÇÃO DE SERVIÇOS ===");
 
 builder.Services.AddOpenApi();
@@ -15,6 +14,17 @@ builder.Services.AddScoped<AuthService>();
 builder.Services.AddScoped<IJwtTokenGnerator, JwtTokenGenerator>();
 
 builder.Services.AddControllers();
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AngularPolicy", policy =>
+    {
+        policy
+            .AllowAnyOrigin()
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
 
 builder.Services.AddDbContext<UserDbContext>(options =>
     options.UseSqlServer(
@@ -50,7 +60,7 @@ builder.Services.AddAuthentication(options =>
 builder.Services.AddAuthorization();
 
 var app = builder.Build(); 
-
+app.UseCors("AngularPolicy");
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
