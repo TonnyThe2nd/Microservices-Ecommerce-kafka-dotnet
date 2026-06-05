@@ -1,8 +1,7 @@
 public class Orders
 {
     public int Id { get; set; }
-    public string CustomerName { get; set; }
-    public string CustomerEmail { get; set; }
+    public Guid CustomerId { get; set; }
     public OrderStatus Status { get; set; }
     public DateTime CreatedAt { get; set; }
     public DateTime? UpdatedAt { get; set; }

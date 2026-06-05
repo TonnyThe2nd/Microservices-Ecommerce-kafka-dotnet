@@ -130,7 +130,7 @@ public class OrderEventsConsumer : BackgroundService
 
                         await producer.PublishPaymentRequestedAsync(
                             order.Id,
-                            order.CustomerEmail);
+                            order.CustomerId);
 
                         _logger.LogInformation(
                             $"✅ Pedido {order.Id} atualizado. " +

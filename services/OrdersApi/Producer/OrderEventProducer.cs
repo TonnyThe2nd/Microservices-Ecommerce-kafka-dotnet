@@ -10,12 +10,12 @@ public class OrderEventProducer
         _kafkaProducer = kafkaProducer;
     }
 
-    public Task PublishPaymentRequestedAsync(int orderId, string customerEmail)
+    public Task PublishPaymentRequestedAsync(int orderId, Guid customerId)
     {
         var evt = new
         {
             OrderId = orderId,
-            CustomerEmail = customerEmail,
+            CustomerId = customerId,
             RequestedAt = DateTime.UtcNow
         };
 

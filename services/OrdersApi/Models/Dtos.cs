@@ -1,6 +1,5 @@
 public record CreateOrderRequest(
-    string CustomerName,
-    string CustomerEmail,
+    Guid CustomerId,
     List<CreateOrderItemRequest> Items
 );
 
@@ -11,8 +10,7 @@ public record CreateOrderItemRequest(
 
 public record OrderResponse(
     int Id,
-    string CustomerName,
-    string CustomerEmail,
+    Guid CustomerId,
     OrderStatus Status,
     DateTime CreatedAt,
     DateTime? UpdatedAt,

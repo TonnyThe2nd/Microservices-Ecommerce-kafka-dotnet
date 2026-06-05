@@ -116,6 +116,21 @@ services:
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       Kafka__BootstrapServers: kafka:9092
+  
+  user-api:
+    build:
+      context: .
+      dockerfile: ./services/UserApi/Dockerfile
+    ports:
+      - "5005:8080"
+    depends_on:
+      kafka:
+        condition: service_healthy
+      sqlserver:
+        condition: service_healthy
+    environment:
+      ConnectionStrings__Default: Data Source=10.1.1.221,42357;Initial Catalog=teste_antonio;Persist Security Info=True;User ID=ui_cn_entity;Password=oebmmvc;MultipleActiveResultSets=True;Encrypt=True;TrustServerCertificate=True;
+      Kafka__BootstrapServers: kafka:9092
 
   # ─── FRONTEND ─────────────────────────────────────────────────
 
